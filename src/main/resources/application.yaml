@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Spring-boot-essentials
+  devtools:
+    restart:
+      enabled: true
