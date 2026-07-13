@@ -1,5 +1,6 @@
 package br.com.eric.springbootessentials.handler;
 
+import br.com.eric.springbootessentials.exception.BadRequestException;
 import br.com.eric.springbootessentials.exception.ErrorResponse;
 import br.com.eric.springbootessentials.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,16 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND.value());
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequestException (BadRequestException ex)
+    {
+        ErrorResponse response = new ErrorResponse(
+                ex.getMessage(),
+                HttpStatus.BAD_REQUEST.value());
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
 
     @ExceptionHandler(Exception.class)
