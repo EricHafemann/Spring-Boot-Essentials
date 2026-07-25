@@ -1,6 +1,8 @@
 package br.com.eric.springbootessentials.dto;
 
+
 import jakarta.validation.constraints.NotBlank;
+
 import lombok.*;
 
 @NoArgsConstructor
@@ -8,11 +10,14 @@ import lombok.*;
 @Data
 @Builder
 @ToString
-public class AlunoDto {
+public class RegisterRequestDto {
 
     @NotBlank
     private String nome;
 
     @NotBlank
     private String email;
+
+    @NotBlank
+    private String senha;
 }

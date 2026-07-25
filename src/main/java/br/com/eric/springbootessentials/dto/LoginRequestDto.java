@@ -1,5 +1,6 @@
 package br.com.eric.springbootessentials.dto;
 
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -8,11 +9,11 @@ import lombok.*;
 @Data
 @Builder
 @ToString
-public class AlunoDto {
-
-    @NotBlank
-    private String nome;
+public class LoginRequestDto {
 
     @NotBlank
     private String email;
+
+    @NotBlank
+    private String senha;
 }
